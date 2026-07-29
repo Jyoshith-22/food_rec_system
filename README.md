@@ -21,8 +21,7 @@ Raw Reviews (Yelp Dataset)
         ▼
 ┌─────────────────────────────────────────────┐
 │           Preprocessing Pipeline            │
-│  Tokenization → Stopword Removal → POS      │
-│  Tagging → Lemmatization (NLTK + WordNet)   │
+│                                             │
 └────────────────────┬────────────────────────┘
                      │
         ┌────────────┼────────────┐
@@ -37,7 +36,6 @@ Raw Reviews (Yelp Dataset)
                      ▼
          ┌──────────────────────┐
          │  MinMaxScaler [1,5]  │
-         │  NMF (2 components)  │
          │  Decision Tree Reg.  │
          └──────────┬───────────┘
                     ▼
@@ -46,34 +44,21 @@ Raw Reviews (Yelp Dataset)
 
 ---
 
-## ⚙️ Tech Stack
-
-| Layer | Tools |
-|-------|-------|
-| Language | Python 3.x |
-| Deep Learning | PyTorch, HuggingFace Transformers (BERT) |
-| ML / Stats | scikit-learn, scipy, numpy, pandas |
-| NLP | NLTK, Gensim (Word2Vec), AFINN, TextBlob, VADER |
-| Visualisation | Matplotlib, Seaborn |
-| Dataset | Yelp Open Dataset (5,000 restaurant reviews) |
-
 ---
 
 ## 🔬 Models Evaluated
 
 **Sentiment Analysis**
-- AFINN · TextBlob · VADER · BERT ✅ *(best)*
+-  BERT 
 
 **Collaborative Filtering**
-- Cosine Similarity · MSD · Pearson Correlation
+- Cosine Similarity 
 
 **Dimensionality Reduction**
-- PCA ✅ *(selected — higher Trustworthiness)* · Isomap
-
+- PCA
+- 
 **Hybrid Regression**
-- NMF + Decision Tree ✅ · NMF + Random Forest
-- NMF + Gradient Boosting · NMF + SVR
-- Standalone DTR/RFR/GBR/SVR · Weighted Hybrid
+- Decision Tree ✅ 
 
 ---
 
@@ -81,10 +66,6 @@ Raw Reviews (Yelp Dataset)
 
 | Model | RMSE |
 |-------|------|
-| **NMF + Decision Tree Regressor** | **1.1955** ✅ |
-| NMF + Random Forest | 1.2340 |
-| NMF + Gradient Boosting | 1.2600 |
-| Weighted Hybrid (baseline) | 1.4200 |
 
 BERT Sentiment Accuracy: **94.8%** · F1: ~0.94
 
