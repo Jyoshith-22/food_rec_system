@@ -56,7 +56,7 @@ Raw Reviews (Yelp Dataset)
 
 **Dimensionality Reduction**
 - PCA
-- 
+
 **Hybrid Regression**
 - Decision Tree ✅ 
 
